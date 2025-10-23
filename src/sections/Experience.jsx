@@ -25,11 +25,28 @@ const Experience = () => {
       icon: Briefcase,
       color: 'blue'
     },
+
+    {
+      type: 'work',
+      title: 'Full Stack Developer (Intern)',
+      company: 'Vibgyor Advisors  Pvt Ltd',
+      period: 'Jan 2025 – Mar 2025',
+      description: 'Leading the development of enterprise-scale data automation platforms, architecting robust backend systems with FastAPI and creating intuitive frontend interfaces with React. Specializing in building scalable solutions that handle complex data workflows and real-time processing.',
+      achievements: [
+        'Engineered SUVI Data Automation Platform reducing manual data processing time by 70%',
+        'Architected secure authentication system handling 10,000+ monthly transactions',
+        'Implemented real-time validation APIs improving data accuracy by 85%',
+        'Optimized database queries reducing response time from 2s to 200ms'
+      ],
+      icon: Briefcase,
+      color: 'blue'
+    },
+
     {
       type: 'achievement',
       title: '🏆 Champion - Jingle Byte Coding Competition 2025',
       company: 'Top 1 among 78 Elite Developers',
-      period: 'December 2025',
+      period: 'January 2025',
       description: 'Dominating performance in competitive programming arena, solving complex algorithmic challenges under time constraints. Demonstrated exceptional problem-solving skills and technical expertise.',
       achievements: [
         'Secured 1st position among 78 highly competitive developers',
@@ -142,14 +159,14 @@ const Experience = () => {
                     >
                       <div className="flex items-start gap-6">
                         {/* Icon */}
-                        <div className={`p-4 rounded-2xl bg-gradient-to-r ${
+                        {/* <div className={`p-4 rounded-2xl bg-gradient-to-r ${
                           exp.color === 'blue' ? 'from-blue-500 to-blue-600' :
                           exp.color === 'yellow' ? 'from-yellow-500 to-orange-500' :
                           exp.color === 'purple' ? 'from-purple-500 to-pink-500' :
                           'from-gray-500 to-gray-600'
                         } text-white shadow-lg`}>
                           <IconComponent size={28} />
-                        </div>
+                        </div> */}
                         
                         {/* Content */}
                         <div className="flex-1">

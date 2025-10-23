@@ -11,7 +11,7 @@ const Hero = () => {
     "Python & FastAPI Specialist", 
     "Scalable Backend Architect",
     "React & Django Expert",
-    "Cloud Solutions Developer"
+    "Python & FastAPI Specialist",
   ];
 
   useEffect(() => {
@@ -94,16 +94,7 @@ const Hero = () => {
           animate="visible"
           className="max-w-6xl mx-auto"
         >
-          {/* Badge */}
-          {/* <motion.div
-            variants={itemVariants}
-            className="inline-flex items-center gap-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200 dark:border-gray-700 rounded-full px-4 py-2 mb-8 shadow-lg"
-          >
-            <Award className="w-4 h-4 text-yellow-500" />
-            <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
-              Available for New Opportunities
-            </span>
-          </motion.div> */}
+          
 
           {/* Main Heading */}
           <motion.div variants={itemVariants} className="mb-6">
