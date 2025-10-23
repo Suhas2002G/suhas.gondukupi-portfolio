@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Mail, Github, Linkedin, BookOpen, Send } from 'lucide-react';
+import { Mail, Github, Linkedin, BookOpen, Send, CheckCircle, XCircle } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const ref = useRef(null);
@@ -14,6 +15,14 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null); // null, 'success', 'error'
+
+  // EmailJS Configuration - Replace with your actual values
+  const EMAILJS_CONFIG = {
+    SERVICE_ID: import.meta.env.VITE_API_EMAILJS_SERVICE_ID,
+    TEMPLATE_ID: import.meta.env.VITE_API_EMAILJS_TEMPLATE_ID,
+    PUBLIC_KEY: import.meta.env.VITE_API_EMAILJS_PUBLIC_KEY,
+  };
 
   const socialLinks = [
     {
@@ -47,18 +56,55 @@ const Contact = () => {
       ...formData,
       [e.target.name]: e.target.value
     });
+    // Clear status when user starts typing again
+    if (submitStatus) setSubmitStatus(null);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      alert('Thank you for your message! I\'ll get back to you soon.');
+    setSubmitStatus(null);
+
+    try {
+      // Validate EmailJS configuration
+      if (!EMAILJS_CONFIG.SERVICE_ID || !EMAILJS_CONFIG.TEMPLATE_ID || !EMAILJS_CONFIG.PUBLIC_KEY) {
+        throw new Error('EmailJS configuration is missing. Please check your environment variables.');
+      }
+
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_name: 'Suhas',
+          reply_to: formData.email,
+        },
+        EMAILJS_CONFIG.PUBLIC_KEY
+      );
+
+      console.log('Email sent successfully:', result);
+      setSubmitStatus('success');
       setFormData({ name: '', email: '', message: '' });
-    }, 2000);
+      
+      // Auto-hide success message after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus(null);
+      }, 5000);
+
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      setSubmitStatus('error');
+      
+      // Auto-hide error message after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus(null);
+      }, 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const containerVariants = {
@@ -105,6 +151,43 @@ const Contact = () => {
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <motion.div variants={itemVariants}>
+              {/* Status Messages */}
+              {submitStatus === 'success' && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mb-6 p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl flex items-center gap-3"
+                >
+                  <CheckCircle className="text-green-600 dark:text-green-400 flex-shrink-0" size={20} />
+                  <div>
+                    <p className="text-green-800 dark:text-green-200 font-medium">
+                      Message sent successfully!
+                    </p>
+                    <p className="text-green-700 dark:text-green-300 text-sm">
+                      Thank you! I'll get back to you soon.
+                    </p>
+                  </div>
+                </motion.div>
+              )}
+
+              {submitStatus === 'error' && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-xl flex items-center gap-3"
+                >
+                  <XCircle className="text-red-600 dark:text-red-400 flex-shrink-0" size={20} />
+                  <div>
+                    <p className="text-red-800 dark:text-red-200 font-medium">
+                      Failed to send message
+                    </p>
+                    <p className="text-red-700 dark:text-red-300 text-sm">
+                      Please try again or contact me directly via email.
+                    </p>
+                  </div>
+                </motion.div>
+              )}
+
               <form onSubmit={handleSubmit} className="space-y-6 bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-xl border border-gray-200 dark:border-gray-700">
                 <div>
                   <label htmlFor="name" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
@@ -117,7 +200,8 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-all duration-300"
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                     placeholder="Your Name"
                   />
                 </div>
@@ -133,7 +217,8 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-all duration-300"
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -148,8 +233,9 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     required
+                    disabled={isSubmitting}
                     rows="6"
-                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-all duration-300 resize-vertical"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-all duration-300 resize-vertical disabled:opacity-50 disabled:cursor-not-allowed"
                     placeholder="Your message here..."
                   />
                 </div>
@@ -157,9 +243,9 @@ const Contact = () => {
                 <motion.button
                   type="submit"
                   disabled={isSubmitting}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 disabled:from-gray-400 disabled:to-gray-500 text-white py-3 px-6 rounded-xl font-semibold transition-all duration-300 shadow-lg flex items-center justify-center gap-2"
+                  whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                  whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
+                  className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 disabled:from-gray-400 disabled:to-gray-500 text-white py-3 px-6 rounded-xl font-semibold transition-all duration-300 shadow-lg flex items-center justify-center gap-2 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <>
@@ -182,9 +268,12 @@ const Contact = () => {
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                   Let's Connect
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
                   I'm currently available for freelance work and full-time opportunities. 
                   Whether you have a project in mind or just want to say hello, I'd love to hear from you.
+                </p>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  Typically respond within 24 hours
                 </p>
               </div>
 
@@ -220,8 +309,6 @@ const Contact = () => {
                   })}
                 </div>
               </div>
-
-              
             </motion.div>
           </div>
         </motion.div>
