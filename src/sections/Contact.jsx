@@ -1,3 +1,5 @@
+
+
 // src/sections/Contact.jsx
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
@@ -12,10 +14,11 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    subject: '',
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null); // null, 'success', 'error'
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   // EmailJS Configuration - Replace with your actual values
   const EMAILJS_CONFIG = {
@@ -71,23 +74,48 @@ const Contact = () => {
         throw new Error('EmailJS configuration is missing. Please check your environment variables.');
       }
 
-      // Send email using EmailJS
+      // Template parameters for main email (to you)
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_name: 'Suhas',
+        reply_to: formData.email,
+      };
+
+      // Send main email to you
       const result = await emailjs.send(
         EMAILJS_CONFIG.SERVICE_ID,
         EMAILJS_CONFIG.TEMPLATE_ID,
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          message: formData.message,
-          to_name: 'Suhas',
-          reply_to: formData.email,
-        },
+        templateParams,
         EMAILJS_CONFIG.PUBLIC_KEY
       );
 
+      // Send auto-reply to the user if auto-reply template is configured
+      if (EMAILJS_CONFIG.AUTO_REPLY_TEMPLATE_ID) {
+        try {
+          const autoReplyParams = {
+            to_email: formData.email,
+            to_name: formData.name,
+            subject: "Thank you for contacting Suhas G",
+          };
+
+          await emailjs.send(
+            EMAILJS_CONFIG.SERVICE_ID,
+            EMAILJS_CONFIG.AUTO_REPLY_TEMPLATE_ID,
+            autoReplyParams,
+            EMAILJS_CONFIG.PUBLIC_KEY
+          );
+        } catch (autoReplyError) {
+          console.warn('Auto-reply failed to send, but main email was sent:', autoReplyError);
+          // Don't throw error for auto-reply failure
+        }
+      }
+
       console.log('Email sent successfully:', result);
       setSubmitStatus('success');
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({ name: '', email: '', subject: '', message: '' });
       
       // Auto-hide success message after 5 seconds
       setTimeout(() => {
@@ -164,7 +192,7 @@ const Contact = () => {
                       Message sent successfully!
                     </p>
                     <p className="text-green-700 dark:text-green-300 text-sm">
-                      Thank you! I'll get back to you soon.
+                      Thank you! I'll get back to you soon. Check your email for confirmation.
                     </p>
                   </div>
                 </motion.div>
@@ -224,6 +252,23 @@ const Contact = () => {
                 </div>
 
                 <div>
+                  <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                    Subject *
+                  </label>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    required
+                    disabled={isSubmitting}
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                    placeholder="What's this regarding?"
+                  />
+                </div>
+
+                <div>
                   <label htmlFor="message" className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">
                     Message *
                   </label>
@@ -234,9 +279,9 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     disabled={isSubmitting}
-                    rows="6"
+                    rows="5"
                     className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white transition-all duration-300 resize-vertical disabled:opacity-50 disabled:cursor-not-allowed"
-                    placeholder="Your message here..."
+                    placeholder="Tell me about your project or inquiry..."
                   />
                 </div>
 
@@ -308,6 +353,20 @@ const Contact = () => {
                     );
                   })}
                 </div>
+              </div>
+
+              {/* Quick Response Info */}
+              <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-2xl p-6 border border-blue-200 dark:border-blue-800">
+                <h4 className="font-semibold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
+                  <Send size={16} />
+                  What to include
+                </h4>
+                <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
+                  <li>• Project details or requirements</li>
+                  <li>• Timeline and budget (if applicable)</li>
+                  <li>• Your contact preferences</li>
+                  <li>• Any relevant links or attachments</li>
+                </ul>
               </div>
             </motion.div>
           </div>
