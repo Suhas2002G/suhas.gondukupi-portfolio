@@ -23,6 +23,7 @@ const Header = () => {
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
     { name: 'Experience', href: '#experience' },
+    { name: 'Achievements ', href: '#achievement' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -64,7 +65,7 @@ const Header = () => {
               <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-blue-500 dark:border-blue-400 shadow-lg hover:shadow-xl transition-all duration-300">
                 {/* Replace the src with your actual image path */}
                 <img 
-                  src="/Suhas.png" 
+                  src="/suhas/Suhas.png" 
                   alt="Profile" 
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
                   onError={(e) => {

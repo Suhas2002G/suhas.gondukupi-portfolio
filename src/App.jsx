@@ -11,6 +11,7 @@ import Contact from './sections/Contact';
 import Footer from './components/Footer';
 import { ThemeProvider } from './hooks/useTheme';
 import MaintenancePage from './components/MaintenancePage';
+import Achievements from './sections/Achievements';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Skills />
           <Projects />
           <Experience />
+          <Achievements/>
           <Contact />
         </main>
         <Footer />

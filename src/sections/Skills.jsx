@@ -13,47 +13,47 @@ const Skills = () => {
     
     
     // Front-End Technology
-    { name: 'HTML', logo: '/HTML5.png' },
-    { name: 'CSS', logo: '/CSS3.png' },
-    { name: 'JavaScript', logo: '/js.png' },
-    { name: 'React.js', logo: '/React.png' },
-    { name: 'Bootstrap', logo: '/Bootstrap.png' },
-    { name: 'Tailwind CSS', logo: '/Tailwind CSS.png' },
+    { name: 'HTML', logo: '/tech-logos/HTML5.png' },
+    { name: 'CSS', logo: '/tech-logos/CSS3.png' },
+    { name: 'JavaScript', logo: '/tech-logos/js.png' },
+    { name: 'React.js', logo: '/tech-logos/React.png' },
+    { name: 'Bootstrap', logo: '/tech-logos/Bootstrap.png' },
+    { name: 'Tailwind CSS', logo: '/tech-logos/Tailwind CSS.png' },
     
 
     // Back-End Technology
-    { name: 'Python', logo: '/Python.png' },
-    { name: 'FastAPI', logo: '/FastAPI.png' },
-    { name: 'Django', logo: '/Django.png' },
-    { name: 'Flask', logo: '/Flask.png' },
+    { name: 'Python', logo: '/tech-logos/Python.png' },
+    { name: 'FastAPI', logo: '/tech-logos/FastAPI.png' },
+    { name: 'Django', logo: '/tech-logos/Django.png' },
+    { name: 'Flask', logo: '/tech-logos/Flask.png' },
 
 
     // Databases
-    { name: 'MySQL', logo: '/MySQL.png' },
-    { name: 'PostgreSQL', logo: '/PostgresSQL.png' },
-    { name: 'SQLite', logo: '/SQLite.png' },
-    { name: 'Redis', logo: '/Redis.png' },
-    { name: 'SQL Server', logo: '/Microsoft SQL Server.png' },
+    { name: 'MySQL', logo: '/tech-logos/MySQL.png' },
+    { name: 'PostgreSQL', logo: '/tech-logos/PostgresSQL.png' },
+    { name: 'SQLite', logo: '/tech-logos/SQLite.png' },
+    { name: 'Redis', logo: '/tech-logos/Redis.png' },
+    { name: 'SQL Server', logo: '/tech-logos/Microsoft SQL Server.png' },
     
     // Library and Packages
-    { name: 'Numpy', logo: '/NumPy.png' },
-    { name: 'Pandas', logo: '/Pandas.png' },
-    { name: 'SQLAlchemy', logo: '/SQLAlchemy.png' },
+    { name: 'Numpy', logo: '/tech-logos/NumPy.png' },
+    { name: 'Pandas', logo: '/tech-logos/Pandas.png' },
+    { name: 'SQLAlchemy', logo: '/tech-logos/SQLAlchemy.png' },
 
 
     
     // Tools
-    { name: 'Docker', logo: '/Docker.png' },
-    { name: 'AWS', logo: '/AWS.png' },
-    { name: 'Git', logo: '/Git.png' },
-    { name: 'Github', logo: '/GitHub.png' },
-    { name: 'Postman', logo: '/Postman.png' },
+    { name: 'Docker', logo: '/tech-logos/Docker.png' },
+    { name: 'AWS', logo: '/tech-logos/AWS.png' },
+    { name: 'Git', logo: '/tech-logos/Git.png' },
+    { name: 'Github', logo: '/tech-logos/GitHub.png' },
+    { name: 'Postman', logo: '/tech-logos/Postman.png' },
 
     
-    { name: 'Python', logo: '/Python.png' },
-    { name: 'FastAPI', logo: '/FastAPI.png' },
-    { name: 'Django', logo: '/Django.png' },
-    { name: 'Flask', logo: '/Flask.png' },
+    { name: 'Python', logo: '/tech-logos/Python.png' },
+    { name: 'FastAPI', logo: '/tech-logos/FastAPI.png' },
+    { name: 'Django', logo: '/tech-logos/Django.png' },
+    { name: 'Flask', logo: '/tech-logos/Flask.png' },
   ];
 
   // Duplicate the array for seamless infinite scroll
