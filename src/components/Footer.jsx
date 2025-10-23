@@ -27,15 +27,15 @@ const Footer = () => {
           <div className="flex items-center gap-3 text-gray-500">
             <div className="flex items-center gap-2">
               <Code size={14} className="text-blue-400" />
-              <span>with</span>
+              {/* <span>with</span> */}
               <motion.div
                 animate={{ scale: [1, 1.1, 1] }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
-                <Heart size={14} className="text-red-400" fill="currentColor" />
+              {/* <Coffee size={14} className="text-amber-500" /> */}
+                {/* <Heart size={14} className="text-red-400" fill="currentColor" /> */}
               </motion.div>
-              <span>&</span>
-              <Coffee size={14} className="text-amber-500" />
+              {/* <span>&</span> */}
             </div>
           </div>
 

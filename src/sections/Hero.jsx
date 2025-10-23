@@ -175,10 +175,10 @@ const Hero = () => {
               <Mail className="w-5 h-5 text-purple-500" />
               <span className="font-medium">suhas8838@gmail.com</span>
             </div>
-            <div className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+            {/* <div className="flex items-center gap-3 text-gray-700 dark:text-gray-300">
               <Calendar className="w-5 h-5 text-orange-500" />
               <span className="font-medium">Available Immediately</span>
-            </div>
+            </div> */}
           </motion.div>
 
           {/* CTA Buttons */}
