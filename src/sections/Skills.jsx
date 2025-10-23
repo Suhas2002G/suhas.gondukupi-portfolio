@@ -198,12 +198,7 @@ const Skills = () => {
                   </div>
                   <div className="text-sm">Technologies</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                    5
-                  </div>
-                  <div className="text-sm">Domains</div>
-                </div>
+                
                 <div className="text-center">
                   <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                     100%
