@@ -120,11 +120,11 @@ const Skills = () => {
           {/* Single Row - Infinite Scroll */}
           <motion.div
             variants={itemVariants}
-            className="relative"
+            className="relative -mt-10 -mb-6"
           >
             {/* Gradient Overlays */}
-            <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-gray-50 dark:from-gray-900 to-transparent z-10"></div>
-            <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-gray-50 dark:from-gray-900 to-transparent z-10"></div>
+            {/* <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-gray-50 dark:from-gray-900 to-transparent z-10"></div> */}
+            {/* <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-gray-50 dark:from-gray-900 to-transparent z-10"></div> */}
             
             {/* Scrolling Container */}
             <div className="flex space-x-8 py-8 animate-scroll-smooth">

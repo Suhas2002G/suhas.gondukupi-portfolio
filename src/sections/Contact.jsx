@@ -355,19 +355,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Quick Response Info */}
-              <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-2xl p-6 border border-blue-200 dark:border-blue-800">
-                <h4 className="font-semibold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
-                  <Send size={16} />
-                  What to include
-                </h4>
-                <ul className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
-                  <li>• Project details or requirements</li>
-                  <li>• Timeline and budget (if applicable)</li>
-                  <li>• Your contact preferences</li>
-                  <li>• Any relevant links or attachments</li>
-                </ul>
-              </div>
+              
             </motion.div>
           </div>
         </motion.div>
