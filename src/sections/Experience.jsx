@@ -80,7 +80,8 @@ const Experience = () => {
           {/* Section Header */}
           <motion.div variants={itemVariants} className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-black text-gray-900 dark:text-white mb-6">
-              Work <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Experience</span>
+              Work Experience
+              {/* <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Experience</span> */}
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
               Professional journey through impactful roles and continuous growth
@@ -104,7 +105,7 @@ const Experience = () => {
                       <img 
                         src={exp.logo} 
                         alt={`${exp.company} logo`}
-                        className="w-10 h-10 object-contain rounded-lg"
+                        className="w-12 h-12 object-contain rounded-lg"
                         onError={(e) => {
                           e.target.style.display = 'none';
                           e.target.nextSibling.style.display = 'flex';

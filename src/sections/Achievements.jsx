@@ -78,9 +78,13 @@ const Achievements = () => {
   return (
     <section id="achievements" ref={ref} className="py-20 bg-gray-50 dark:bg-gray-800 relative overflow-hidden">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-orange-50 via-yellow-50 to-red-100 dark:from-gray-900 dark:via-orange-900/20 dark:to-red-900/20"></div>
+      {/* <div className="absolute inset-0 bg-gradient-to-br from-orange-50 via-yellow-50 to-red-100 dark:from-gray-900 dark:via-orange-900/20 dark:to-red-900/20"></div>
       <div className="absolute top-10 left-10 w-96 h-96 bg-yellow-500/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-10 right-10 w-96 h-96 bg-red-500/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-10 right-10 w-96 h-96 bg-red-500/5 rounded-full blur-3xl"></div> */}
+
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900/20"></div>
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
@@ -92,7 +96,8 @@ const Achievements = () => {
           {/* Section Header */}
           <motion.div variants={itemVariants} className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-black text-gray-900 dark:text-white mb-6">
-              Awards & <span className="bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent">Achievements</span>
+              Awards & Achievements
+              {/* <span className="bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent">Achievements</span> */}
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
               Recognitions and competitive accomplishments showcasing technical excellence
