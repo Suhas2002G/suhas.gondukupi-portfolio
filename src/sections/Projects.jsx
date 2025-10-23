@@ -20,12 +20,6 @@ const Projects = () => {
       demo: '#',
       // featured: true,
       featured: false,
-      metrics: [
-        { icon: TrendingUp, value: '80%', label: 'Process Automation', color: 'emerald' },
-        { icon: Users, value: '100+', label: 'Active Users', color: 'blue' },
-        { icon: Clock, value: '40%', label: 'Faster Response', color: 'purple' },
-        { icon: Shield, value: '100%', label: 'Secure Payments', color: 'green' }
-      ],
       highlights: [
         'Microservices architecture handling 10,000+ monthly transactions',
         'Real-time notification system reducing communication delays by 60%',
@@ -45,12 +39,6 @@ const Projects = () => {
       demo: '#',
       // featured: true,
       featured: false,
-      metrics: [
-        { icon: Zap, value: '25%', label: 'Efficiency Gain', color: 'yellow' },
-        { icon: Target, value: '99.9%', label: 'Delivery Accuracy', color: 'red' },
-        { icon: Clock, value: '30%', label: 'Time Saved', color: 'blue' },
-        { icon: Award, value: '4.9/5', label: 'Customer Rating', color: 'purple' }
-      ],
       highlights: [
         'Dynamic route optimization reducing fuel costs by 18%',
         'OTP-based secure delivery system eliminating package theft',

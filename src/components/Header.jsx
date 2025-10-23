@@ -29,8 +29,7 @@ const Header = () => {
   const scrollToSection = (href) => {
     const element = document.querySelector(href);
     if (element) {
-      // Calculate offset for header height
-      const headerHeight = 80; // Approximate header height in pixels
+      const headerHeight = 80;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
 
@@ -54,13 +53,45 @@ const Header = () => {
     >
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
+          {/* Logo - Circular Profile Image */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="text-2xl font-bold text-gray-900 dark:text-white cursor-pointer"
+            className="flex items-center cursor-pointer"
             onClick={() => scrollToSection('#home')}
           >
-            SG
+            <div className="relative">
+              {/* Circular Image Container */}
+              <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-blue-500 dark:border-blue-400 shadow-lg hover:shadow-xl transition-all duration-300">
+                {/* Replace the src with your actual image path */}
+                <img 
+                  src="/Suhas.png" 
+                  alt="Profile" 
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                  onError={(e) => {
+                    // Fallback if image doesn't load
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'flex';
+                  }}
+                />
+                {/* Fallback initial circle */}
+                <div className="w-full h-full bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center text-white font-bold text-lg hidden">
+                  SG
+                </div>
+              </div>
+              
+              {/* Online status indicator */}
+              <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white dark:border-gray-900"></div>
+            </div>
+            
+            {/* Optional: Name beside the image on larger screens */}
+            <div className="hidden sm:block ml-3">
+              <h1 className="text-lg font-bold text-gray-900 dark:text-white">
+                Suhas
+              </h1>
+              <p className="text-xs text-gray-600 dark:text-gray-400">
+                Full Stack Developer
+              </p>
+            </div>
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -74,7 +105,6 @@ const Header = () => {
                 className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors font-medium relative group"
               >
                 {item.name}
-                {/* Underline animation */}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 dark:bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
               </motion.button>
             ))}

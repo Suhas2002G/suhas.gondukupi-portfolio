@@ -38,7 +38,7 @@ const Experience = () => {
       ],
       icon: Trophy,
       color: 'yellow',
-      linkedin: 'https://linkedin.com/posts/yourprofile/jingle-byte-champion-activity-123456789' // Replace with actual LinkedIn post URL
+      linkedin: 'https://www.linkedin.com/posts/suhas8838_jinglebytewinner-fullstackdevelopment-django-activity-7292205973933318144-rO62?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEpLqwgBq1x05FspUi0UHlcdPrvOV2HDdV4' 
     },
     {
       type: 'achievement',
@@ -53,7 +53,7 @@ const Experience = () => {
       ],
       icon: Zap,
       color: 'purple',
-      linkedin: 'https://linkedin.com/posts/yourprofile/thunder-bytes-winner-activity-123456789' // Replace with actual LinkedIn post URL
+      linkedin: 'https://www.linkedin.com/posts/suhas8838_hackathonwinner-rainyshoppy-fullstackdevelopment-activity-7246465805784109056-WmM5?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEpLqwgBq1x05FspUi0UHlcdPrvOV2HDdV4'
     }
   ];
 
@@ -127,7 +127,7 @@ const Experience = () => {
             </p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid ">
             {/* Main Experience Timeline */}
             <div className="lg:col-span-2">
               <div className="space-y-8">
@@ -222,70 +222,7 @@ const Experience = () => {
               </div>
             </div>
 
-            {/* Certifications & Skills Sidebar */}
-            <motion.div variants={itemVariants} className="lg:col-span-1 space-y-8">
-              {/* Certifications */}
-              <div className="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-2xl border border-gray-200 dark:border-gray-700 sticky top-8">
-                <h3 className="text-2xl font-black text-gray-900 dark:text-white mb-6 flex items-center gap-3">
-                  <Trophy className="w-6 h-6 text-yellow-500" />
-                  Certifications
-                </h3>
-                <div className="space-y-4">
-                  {certifications.map((cert, index) => (
-                    <motion.div
-                      key={index}
-                      whileHover={{ scale: 1.02 }}
-                      className="flex items-start gap-4 p-4 bg-gradient-to-r from-gray-50 to-blue-50 dark:from-gray-700 dark:to-blue-900/20 rounded-2xl border border-gray-200 dark:border-gray-600"
-                    >
-                      <div className="text-2xl">{cert.badge}</div>
-                      <div className="flex-1">
-                        <h4 className="font-bold text-gray-900 dark:text-white text-sm">
-                          {cert.name}
-                        </h4>
-                        <p className="text-gray-600 dark:text-gray-400 text-xs mt-1">
-                          {cert.issuer}
-                        </p>
-                        {cert.score && (
-                          <div className="mt-2">
-                            <span className="inline-block bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-xs px-2 py-1 rounded-full font-medium">
-                              {cert.score}
-                            </span>
-                          </div>
-                        )}
-                      </div>
-                      {cert.verified && (
-                        <div className="text-green-500" title="Verified">
-                          ✓
-                        </div>
-                      )}
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Quick Stats */}
-              {/* <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-8 text-white shadow-2xl">
-                <h3 className="text-xl font-black mb-6">Career Highlights</h3>
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center">
-                    <span className="text-blue-100">Projects Delivered</span>
-                    <span className="font-black text-lg">15+</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-blue-100">Hackathon Wins</span>
-                    <span className="font-black text-lg">2x</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-blue-100">Tech Stack</span>
-                    <span className="font-black text-lg">20+</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-blue-100">Experience</span>
-                    <span className="font-black text-lg">2+ Years</span>
-                  </div>
-                </div>
-              </div> */}
-            </motion.div>
+            
           </div>
         </motion.div>
       </div>

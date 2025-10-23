@@ -10,11 +10,7 @@ const Skills = () => {
 
   // All skills in a single array for continuous scrolling
   const allSkills = [
-    // Back-End Technology
-    { name: 'Python', logo: '/Python.png' },
-    { name: 'FastAPI', logo: '/FastAPI.png' },
-    { name: 'Django', logo: '/Django.png' },
-    { name: 'Flask', logo: '/Flask.png' },
+    
     
     // Front-End Technology
     { name: 'HTML', logo: '/HTML5.png' },
@@ -24,6 +20,14 @@ const Skills = () => {
     { name: 'Bootstrap', logo: '/Bootstrap.png' },
     { name: 'Tailwind CSS', logo: '/Tailwind CSS.png' },
     
+
+    // Back-End Technology
+    { name: 'Python', logo: '/Python.png' },
+    { name: 'FastAPI', logo: '/FastAPI.png' },
+    { name: 'Django', logo: '/Django.png' },
+    { name: 'Flask', logo: '/Flask.png' },
+
+
     // Databases
     { name: 'MySQL', logo: '/MySQL.png' },
     { name: 'PostgreSQL', logo: '/PostgresSQL.png' },
@@ -35,6 +39,8 @@ const Skills = () => {
     { name: 'Numpy', logo: '/NumPy.png' },
     { name: 'Pandas', logo: '/Pandas.png' },
     { name: 'SQLAlchemy', logo: '/SQLAlchemy.png' },
+
+
     
     // Tools
     { name: 'Docker', logo: '/Docker.png' },
@@ -42,6 +48,12 @@ const Skills = () => {
     { name: 'Git', logo: '/Git.png' },
     { name: 'Github', logo: '/GitHub.png' },
     { name: 'Postman', logo: '/Postman.png' },
+
+    
+    { name: 'Python', logo: '/Python.png' },
+    { name: 'FastAPI', logo: '/FastAPI.png' },
+    { name: 'Django', logo: '/Django.png' },
+    { name: 'Flask', logo: '/Flask.png' },
   ];
 
   // Duplicate the array for seamless infinite scroll
