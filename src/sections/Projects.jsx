@@ -15,13 +15,13 @@ const Projects = () => {
       subtitle: 'Enterprise Society Management Platform',
       description: 'A comprehensive digital transformation solution for residential societies, automating complex administrative workflows, financial management, and enhancing resident engagement through modern technology.',
       linkedinEmbed: 'https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7301115819919368193?collapsed=1',
-      tech: ['Django', 'Python', 'React', 'MySQL', 'Razorpay API', 'Redis', 'REST APIs'],
+      tech: ['Django', 'Python', 'React', 'MySQL', 'Razorpay API', 'Redis', 'SMTP'],
       github: 'https://github.com/Suhas2002G/Society-360',
       demo: '#',
       // featured: true,
       featured: false,
       highlights: [
-        'Microservices architecture handling 10,000+ monthly transactions',
+        'High-performance backend enabling smooth experience for 1,000+ active residents',
         'Real-time notification system reducing communication delays by 60%',
         'Secure payment gateway processing significant maintenance fees',
         'Comprehensive admin dashboard with advanced analytics'
@@ -31,10 +31,10 @@ const Projects = () => {
     },
     {
       title: 'Santa\'s Treasure',
-      subtitle: 'Intelligent Logistics Management System',
-      description: 'Advanced supply chain optimization platform leveraging AI-driven route planning and real-time tracking to revolutionize last-mile delivery operations and logistics management.',
+      subtitle: 'Logistics Management System',
+      description: 'Advanced supply chain optimization platform leveraging route planning and real-time tracking to revolutionize last-mile delivery operations and logistics management.',
       linkedinEmbed: 'https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7287851335406735360?collapsed=1',
-      tech: ['FastAPI', 'Python', 'JavaScript', 'PostgreSQL', 'Google Maps API', 'Docker'],
+      tech: ['Django', 'Python', 'JavaScript', 'MySQL', 'HTML', 'CSS', 'Google Maps API', 'EmaiJS'],
       github: 'https://github.com/Suhas2002G/Santa-Treasure/',
       demo: '#',
       // featured: true,
@@ -43,7 +43,7 @@ const Projects = () => {
         'Dynamic route optimization reducing fuel costs by 18%',
         'OTP-based secure delivery system eliminating package theft',
         'Real-time analytics dashboard for performance monitoring',
-        'Predictive ETA system with 95% accuracy using ML'
+        'Razorpay for seamless and secure transaction processing.'
       ],
       impact: 'Optimized logistics operations resulting in significant cost savings and enhanced customer experience through reliable, trackable deliveries.',
       icon: Truck

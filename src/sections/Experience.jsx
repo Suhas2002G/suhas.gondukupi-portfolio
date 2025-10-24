@@ -11,32 +11,36 @@ const Experience = () => {
 
   const experiences = [
     {
-      title: 'Python Full Stack Developer',
-      company: 'AYC Analytics Pvt Ltd, Pune',
-      period: 'April 2025 – Present',
-      description: 'Leading the development of enterprise-scale data automation platforms, architecting robust backend systems with FastAPI and creating intuitive frontend interfaces with React. Specializing in building scalable solutions that handle complex data workflows and real-time processing.',
-      achievements: [
-        'Engineered SUVI Data Automation Platform reducing manual data processing time by 70%',
-        'Architected secure authentication system handling 10,000+ monthly transactions',
-        'Implemented real-time validation APIs improving data accuracy by 85%',
-        'Optimized database queries reducing response time from 2s to 200ms'
-      ],
-      logo: '/exp-logos/ayc.jpg',
-      website: 'https://aycanalytics.com'
-    },
+  title: 'Python Full Stack Developer',
+  company: 'AYC Analytics Pvt Ltd, Pune',
+  period: 'April 2025 – Present',
+  description: 'Spearheading the development of SUVI (Smart Upload & Validation Interface) — a secure, scalable, and intelligent data automation platform designed to simplify enterprise data ingestion, validation, and management. Leveraging FastAPI, Flask, React, and modern database optimization to deliver high-performance, real-time systems.',
+  achievements: [
+    'Architected SUVI platform enabling enterprises to securely connect, validate, and upload large datasets with 70% reduction in manual intervention',
+    'Implemented robust JWT-based authentication and role-based access control (RBAC) ensuring enterprise-grade data security',
+    'Collaborated with the backend team to develop a dynamic validation engine supporting configurable rule sets for real-time data quality assurance.',
+    'Integrated intelligent error logging and recovery workflows enhancing system reliability and transparency',
+    'Optimized database schema and query performance reducing data processing time from 2s to 200ms',
+    'Built responsive, React-based frontend for seamless user experience across all SUVI modules'
+  ],
+  logo: '/exp-logos/ayc.jpg',
+  website: 'https://aycanalytics.com'
+},
+
     {
-      title: 'Full Stack Developer (Intern)',
-      company: 'Vibgyor Advisors Pvt Ltd',
-      period: 'Jan 2025 – Mar 2025',
-      description: 'Developed and maintained web applications using modern technologies, collaborated with cross-functional teams to deliver high-quality software solutions.',
-      achievements: [
-        'Built responsive web applications serving 5,000+ monthly users',
-        'Implemented RESTful APIs improving data exchange efficiency',
-        'Collaborated in agile development environment delivering features on schedule'
-      ],
-      logo: '/exp-logos/vibgyor.jpeg',
-      website: 'https://vibgyoradvisors.com'
-    }
+  title: 'Full Stack Developer (Intern)',
+  company: 'Vibgyor Advisors Pvt Ltd',
+  period: 'Jan 2025 – Mar 2025',
+  description: 'Contributed to the design and development of an in-house HRMS platform, streamlining employee management and automating HR workflows through scalable full-stack solutions.',
+  achievements: [
+    'Engineered core HRMS modules including employee onboarding, attendance, and payroll management',
+    'Optimized database queries reducing response times by 15% for high-volume HR data operations',
+    'Collaborated with UI/UX and backend teams to deliver a cohesive and user-centric HR experience',
+    'Contributed to an agile sprint cycle ensuring timely delivery of critical HR automation features'
+  ],
+  logo: '/exp-logos/vibgyor.jpeg',
+  website: 'https://vibgyoradvisors.com'
+}
   ];
 
   const containerVariants = {
