@@ -101,7 +101,7 @@ const About = () => {
           </div>
 
           {/* Core Competencies */}
-          <motion.div variants={itemVariants} className="mt-16 text-center">
+          {/* <motion.div variants={itemVariants} className="mt-16 text-center">
             <div className="bg-gray-900 dark:bg-gray-800 rounded-3xl p-8 text-white shadow-2xl">
               <h3 className="text-2xl font-bold mb-6 text-blue-600 dark:text-blue-400">Core Competencies</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -127,7 +127,10 @@ const About = () => {
                 ))}
               </div>
             </div>
-          </motion.div>
+          </motion.div> */}
+
+
+          
         </motion.div>
       </div>
     </section>

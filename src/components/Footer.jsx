@@ -61,8 +61,8 @@ const Footer = () => {
             {/* <Shield className="w-3 h-3 text-blue-400" /> */}
             <span className="text-xs text-gray-400 max-w-3xl">
               <strong>Disclaimer:</strong> All trademarks, logos, and brand names are the property of their respective owners. 
-            All company, product, and service names used in this website are for identification purposes only. 
-            Use of these names, trademarks, and brands does not imply endorsement.
+            All company, product, and service names used for identification purposes only. 
+            Use of these trademarks, and brands does not imply endorsement.
             </span>
           </div>
           

@@ -229,7 +229,7 @@ const Achievements = () => {
   const achievements = [
     {
       title: 'Winner – Jingle Byte Coding Competition 2024',
-      subtitle: 'Issued by Itvedant Pvt Ltd',
+      subtitle: 'Issued by  Education Pvt Ltd',
       period: 'January 2025',
       description: 'Developed a web application that simulates Santa\'s gift delivery logistics. The system optimizes delivery routes using Google Maps API, integrates Razorpay for secure payments, and ensures OTP-based delivery verification.',
       technologies: ['Python', 'Django', 'SQL', 'HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Google Maps API', 'Razorpay'],
@@ -246,7 +246,7 @@ const Achievements = () => {
     },
     {
       title: '1st Prize Winner – Thunder Bytes Monsoon Hackathon 2024',
-      subtitle: 'Issued by Itvedant Pvt Ltd',
+      subtitle: 'Issued by Itvedant Education Pvt Ltd',
       period: 'September 2024',
       description: 'Developed RainyShoppy, an e-commerce platform for monsoon gear (umbrellas, raincoats), featuring user authentication, product listings, shopping cart functionality, and secure payment processing.',
       technologies: ['Python', 'Django', 'SQL', 'HTML', 'CSS', 'JavaScript', 'Bootstrap'],
