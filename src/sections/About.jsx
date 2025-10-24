@@ -109,11 +109,11 @@ const About = () => {
                   'Backend Architecture',
                   'API Development', 
                   'System Optimization',
-                  'Cloud Deployment',
                   'Database Design',
                   'Performance Tuning',
                   'Security Implementation',
-                  'Team Leadership'
+                  'Team Leadership',
+                  'Cloud Deployment',
                 ].map((skill, index) => (
                   <motion.div
                     key={skill}

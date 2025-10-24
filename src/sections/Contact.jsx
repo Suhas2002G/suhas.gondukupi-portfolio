@@ -47,13 +47,13 @@ const Contact = () => {
       color: 'blue',
       description: '/in/suhas8838'
     },
-    // {
-    //   name: 'Medium',
-    //   url: 'https://medium.com/@suhas8838',
-    //   icon: BookOpen,
-    //   color: 'green',
-    //   description: '@suhas8838'
-    // }
+    {
+      name: 'Medium',
+      url: 'https://www.linkedin.com/in/suhas8838/',
+      icon: BookOpen,
+      color: 'green',
+      description: '@suhas8838'
+    }
   ];
 
   const contactInfo = [
