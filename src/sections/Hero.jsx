@@ -192,7 +192,7 @@ const Hero = () => {
                 boxShadow: "0 20px 40px rgba(59, 130, 246, 0.3)"
               }}
               whileTap={{ scale: 0.95 }}
-              href="/Suhas_Resume.pdf"
+              href="/Suhas_Gondukupi_Resume.pdf"
               download
               className="group relative flex items-center gap-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 shadow-2xl overflow-hidden"
             >
