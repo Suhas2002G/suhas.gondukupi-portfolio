@@ -14,7 +14,7 @@ const Experience = () => {
   title: 'Python Full Stack Developer',
   company: 'AYC Analytics Pvt Ltd, Pune',
   period: 'April 2025 – Present',
-  description: 'Spearheading the development of SUVI (Smart Upload & Validation Interface) — a secure, scalable, and intelligent data automation platform designed to simplify enterprise data ingestion, validation, and management. Leveraging FastAPI, Flask, React, and modern database optimization to deliver high-performance, real-time systems.',
+  description: 'Spearheading the development of SUVI (Smart Upload & Validation Interface) — a secure, scalable, and intelligent data automation platform designed to simplify enterprise data ingestion, validation, and management.',
   achievements: [
     'Architected SUVI platform enabling enterprises to securely connect, validate, and upload large datasets with 70% reduction in manual intervention',
     'Implemented robust JWT-based authentication and role-based access control (RBAC) ensuring enterprise-grade data security',
