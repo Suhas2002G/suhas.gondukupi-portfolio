@@ -235,9 +235,9 @@ const Projects = () => {
                             <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
                               Project Showcase
                             </h4>
-                            <p className="text-sm text-gray-600 dark:text-gray-400">
+                            {/* <p className="text-sm text-gray-600 dark:text-gray-400">
                               LinkedIn Project Demonstration
-                            </p>
+                            </p> */}
                           </div>
                           
                           {/* Embedded LinkedIn Post */}

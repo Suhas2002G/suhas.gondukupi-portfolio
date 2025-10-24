@@ -25,6 +25,7 @@ const Contact = () => {
     SERVICE_ID: import.meta.env.VITE_API_EMAILJS_SERVICE_ID,
     TEMPLATE_ID: import.meta.env.VITE_API_EMAILJS_TEMPLATE_ID,
     PUBLIC_KEY: import.meta.env.VITE_API_EMAILJS_PUBLIC_KEY,
+    // AUTO_REPLY_TEMPLATE_ID: import.meta.env.AUTO_REPLY_TEMPLATE_ID
   };
 
   const socialLinks = [
@@ -76,14 +77,14 @@ const Contact = () => {
 
       // Template parameters for main email (to you)
       const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
+        name: formData.name,
+        email: formData.email,
         subject: formData.subject,
         message: formData.message,
-        to_name: 'Suhas',
         reply_to: formData.email,
       };
 
+      
       // Send main email to you
       const result = await emailjs.send(
         EMAILJS_CONFIG.SERVICE_ID,
@@ -93,25 +94,25 @@ const Contact = () => {
       );
 
       // Send auto-reply to the user if auto-reply template is configured
-      if (EMAILJS_CONFIG.AUTO_REPLY_TEMPLATE_ID) {
-        try {
-          const autoReplyParams = {
-            to_email: formData.email,
-            to_name: formData.name,
-            subject: "Thank you for contacting Suhas G",
-          };
+      // if (EMAILJS_CONFIG.AUTO_REPLY_TEMPLATE_ID) {
+      //   try {
+      //     const autoReplyParams = {
+      //       to_email: formData.email,
+      //       to_name: formData.name,
+      //       subject: "Thank you for contacting Suhas G",
+      //     };
 
-          await emailjs.send(
-            EMAILJS_CONFIG.SERVICE_ID,
-            EMAILJS_CONFIG.AUTO_REPLY_TEMPLATE_ID,
-            autoReplyParams,
-            EMAILJS_CONFIG.PUBLIC_KEY
-          );
-        } catch (autoReplyError) {
-          console.warn('Auto-reply failed to send, but main email was sent:', autoReplyError);
-          // Don't throw error for auto-reply failure
-        }
-      }
+      //     await emailjs.send(
+      //       EMAILJS_CONFIG.SERVICE_ID,
+      //       EMAILJS_CONFIG.AUTO_REPLY_TEMPLATE_ID,
+      //       autoReplyParams,
+      //       EMAILJS_CONFIG.PUBLIC_KEY
+      //     );
+      //   } catch (autoReplyError) {
+      //     console.warn('Auto-reply failed to send, but main email was sent:', autoReplyError);
+      //     // Don't throw error for auto-reply failure
+      //   }
+      // }
 
       console.log('Email sent successfully:', result);
       setSubmitStatus('success');
