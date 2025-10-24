@@ -211,7 +211,7 @@ const Projects = () => {
                             <Github className="w-4 h-4" />
                             Source Code
                           </motion.a>
-                          <motion.a
+                          {/* <motion.a
                             whileHover={{ 
                               scale: 1.05,
                               boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)"
@@ -224,7 +224,7 @@ const Projects = () => {
                           >
                             <ExternalLink className="w-4 h-4" />
                             Live Demo
-                          </motion.a>
+                          </motion.a> */}
                         </div>
                       </div>
 
