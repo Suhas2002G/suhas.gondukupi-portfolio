@@ -97,10 +97,10 @@ const Hero = () => {
           
 
           {/* Main Heading */}
-          <motion.div variants={itemVariants} className="mb-6">
+          <motion.div variants={itemVariants} className="mb-6 text-center">
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-gray-900 dark:text-white mb-4 leading-tight">
               SUHAS
-              <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="-mt-4 block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 GONDUKUPI
               </span>
             </h1>
