@@ -229,7 +229,7 @@ const Achievements = () => {
   const achievements = [
     {
       title: 'Winner – Jingle Byte Coding Competition 2024',
-      subtitle: 'Issued by  Education Pvt Ltd',
+      subtitle: 'Issued by Itvedant Education Pvt Ltd',
       period: 'January 2025',
       description: 'Developed a web application that simulates Santa\'s gift delivery logistics. The system optimizes delivery routes using Google Maps API, integrates Razorpay for secure payments, and ensures OTP-based delivery verification.',
       technologies: ['Python', 'Django', 'SQL', 'HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Google Maps API', 'Razorpay'],
