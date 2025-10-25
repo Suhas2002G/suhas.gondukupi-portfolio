@@ -1,5 +1,5 @@
-// src/App.jsx
 import React from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Header from './components/Header';
 import Hero from './sections/Hero';
@@ -28,6 +28,8 @@ function App() {
           <Contact />
         </main>
         <Footer />
+
+         <Analytics />
       </div>
 
 
