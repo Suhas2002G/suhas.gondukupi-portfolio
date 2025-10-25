@@ -1,5 +1,7 @@
 import React from 'react';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
+
 import { motion, AnimatePresence } from 'framer-motion';
 import Header from './components/Header';
 import Hero from './sections/Hero';
@@ -29,7 +31,10 @@ function App() {
         </main>
         <Footer />
 
+
+        {/* vercel monitoring component  */}
          <Analytics />
+         <SpeedInsights />
       </div>
 
 
