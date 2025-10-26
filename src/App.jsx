@@ -38,7 +38,7 @@ function App() {
       </div>
 
 
-      {/* MaintenancePage  */}
+      {/* MaintenancePage in case we have to down the webiste  */}
       {/* <MaintenancePage/> */}
       
     </ThemeProvider>
