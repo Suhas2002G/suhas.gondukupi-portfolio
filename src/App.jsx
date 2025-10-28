@@ -12,8 +12,8 @@ import Experience from './sections/Experience';
 import Contact from './sections/Contact';
 import Footer from './components/Footer';
 import { ThemeProvider } from './hooks/useTheme';
-import MaintenancePage from './components/MaintenancePage';
 import Achievements from './sections/Achievements';
+import MaintenancePage from './components/MaintenancePage';
 
 function App() {
   return (
