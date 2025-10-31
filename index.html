@@ -2,20 +2,69 @@
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/suhas/icon.png" />
+    <link rel="icon" type="image/png" href="/suhas/icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Suhas Gondukupi - Full Stack Developer specializing in Django, FastAPI, and React. Building scalable backend systems and intuitive UIs.">
-    <meta name="keywords" content="Full Stack Developer, Python, Django, FastAPI, React, Portfolio, Suhas Gondukupi">
+
+    <!-- Basic SEO -->
+    <title>Suhas Gondukupi - Full Stack Developer | Django, FastAPI & React Expert</title>
+    <meta name="description" content="Suhas Gondukupi - Python Full Stack Developer specializing in Django, FastAPI, and React. Building scalable backend systems and intuitive UIs.">
+    <meta name="keywords" content="Suhas Gondukupi, Full Stack Developer, Python, Django, FastAPI, React, Backend Developer, Portfolio, Web Developer">
     <meta name="author" content="Suhas Gondukupi">
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://suhasgondukupi.live/" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Open Graph / Social Meta -->
+    <meta property="og:title" content="Suhas Gondukupi - Full Stack Developer" />
+    <meta property="og:description" content="Building scalable backend systems and intuitive UIs with Django, FastAPI & React." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://suhasgondukupi.live/" />
+    <meta property="og:image" content="https://suhasgondukupi.live/suhas/icon.png" />
+
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Suhas Gondukupi - Full Stack Developer" />
+    <meta name="twitter:description" content="Python Full Stack Developer | Django, FastAPI, React." />
+    <meta name="twitter:image" content="https://suhasgondukupi.live/suhas/icon.png" />
     
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Suhas Gondukupi - Full Stack Developer">
-    <meta property="og:description" content="Building scalable backend systems and intuitive UIs with Django, FastAPI & React">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="/preview-image.png">
-    
-    <title>Suhas Gondukupi - Full Stack Developer</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-223GT943HH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-223GT943HH');
+    </script>
+
+    <!-- Schema.org JSON-LD for Personal Branding -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Suhas Gondukupi",
+      "url": "https://suhasgondukupi.live",
+      "sameAs": [
+        "https://www.linkedin.com/in/suhas8838/",
+        "https://github.com/Suhas2002G"
+      ],
+      "jobTitle": "Python Full Stack Developer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelance / Open Source"
+      },
+      "alumniOf": {
+        "@type": "Pune University",
+        "name": "DYP College, Pune"
+      },
+      "knowsAbout": ["Python", "Django", "FastAPI", "React", "System Architecture", "DevOps","AWS"],
+      "image": "https://suhasgondukupi.live/preview-image.png",
+      "description": "Suhas Gondukupi - Full Stack Developer specializing in Django, FastAPI & React. Passionate about backend architecture and building production-grade applications."
+    }
+    </script>
   </head>
+
   <body class="bg-white dark:bg-gray-900 transition-colors duration-300">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>

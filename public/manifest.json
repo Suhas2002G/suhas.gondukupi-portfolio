@@ -1,0 +1,16 @@
+{
+  "name": "Suhas Gondukupi Portfolio",
+  "short_name": "Suhas Portfolio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0f172a",
+  "description": "Portfolio of Suhas Gondukupi - Python Full Stack Developer specializing in Django, FastAPI, and React.",
+  "icons": [
+    {
+      "src": "/suhas/icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
